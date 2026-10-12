@@ -1,0 +1,114 @@
+ /* ---------- RESET & BASE ---------- */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e1e2f 0%, #2a2a40 50%, #3b1e4d 100%);
+    color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ---------- HEADING ---------- */
+h3 {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #ff7eb3, #ff758c, #ffa07a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.04); }
+}
+
+/* ---------- BUTTONS ---------- */
+button {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    margin: 8px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.25s ease, background 0.25s ease;
+    color: #fff;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    box-shadow: 0 6px 18px rgba(255, 117, 140, 0.35);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(255, 117, 140, 0.55);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(255, 117, 140, 0.4);
+}
+
+/* Second button — different color */
+button:nth-of-type(2) {
+    background: linear-gradient(135deg, #6a5acd, #8a7cff);
+    box-shadow: 0 6px 18px rgba(106, 90, 205, 0.4);
+}
+button:nth-of-type(2):hover {
+    box-shadow: 0 10px 24px rgba(106, 90, 205, 0.6);
+}
+
+/* ---------- OUTPUT PARAGRAPHS ---------- */
+#rundown,
+#response-id {
+    max-width: 620px;
+    margin-top: 30px;
+    padding: 22px 26px;
+    border-radius: 16px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+    animation: fadeIn 0.4s ease;
+}
+
+#rundown {
+    color: #ffd6e0;
+    border-left: 4px solid #ff758c;
+}
+
+#response-id {
+    color: #d6d0ff;
+    border-left: 4px solid #8a7cff;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+    h3 { font-size: 1.15rem; letter-spacing: 1px; }
+    button { font-size: 0.85rem; padding: 12px 22px; }
+    #rundown, #response-id { font-size: 0.95rem; padding: 16px; }
+}
